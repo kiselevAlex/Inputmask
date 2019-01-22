@@ -1817,6 +1817,9 @@
                                 break;
 
                               case "keypress":
+                                if ($.isFunction(opts.onKeyPress)){
+                                    return opts.onKeyPress.call(this, e);
+                                }
                                 if (skipKeyPressEvent === true) {
                                     return e.preventDefault();
                                 }
